@@ -34,8 +34,10 @@ $t = [1, 2, 3, 4, 5, 6, 7];
 // var_dump($t);
 // array_map(callable, array) <> array_filter(array,callable)
 print_r(array_map(function ($x) {
-    return $x * $x; }, array_filter($t, function ($x) {
-        return $x % 2 == 0; })));
+    return $x * $x;
+}, array_filter($t, function ($x) {
+    return $x % 2 == 0;
+})));
 
 // From PHP 7.4 -- Could user arrow functions
 print_r(array_map(fn($x) => $x * $x, array_filter($t, fn($x) => $x % 2 == 0)));
@@ -106,10 +108,11 @@ $bank = [
         "correct_answer" => 2
     ]
 ]
-?>
+    ?>
 <?php foreach ($bank as $id => $q): ?>
     <b><?= $q["question"] ?></b><br>
     <?php foreach ($q["answers"] as $sign => $text): ?>
-        <input type="radio" name="q<?= $id ?>" value="<? $sign ?>" <?= $sign == $q["correct_answer"] ? "checked" : "" ?> disabled> <?= $sign . ".)". $text ?><br>
-    <?php endforeach ?>    
+        <input type="radio" name="q<?= $id ?>" value="<? $sign ?>" <?= $sign == $q["correct_answer"] ? "checked" : "" ?> disabled>
+        <?= $sign . ".)" . $text ?><br>
+    <?php endforeach ?>
 <?php endforeach ?>

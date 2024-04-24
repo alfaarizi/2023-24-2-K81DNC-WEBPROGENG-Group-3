@@ -22,7 +22,7 @@ usort($reg, fn ($a, $b) => strcmp($a['fullname'], $b['fullname']));
                 <td><a href="show.php?id=<?= $r['id'] ?>"><?= $r['fullname'] ?></a></td>
                 <td><?= $r['age'] ?></td>
                 <td><?= $r['gender'] == 'm' ? 'Male' : 'Female' ?></td>
-            </tr>
+            </tr
         <?php endforeach ?>
     </table>
 </body>
